@@ -1,0 +1,113 @@
+
+
+
+
+body{
+    color: var(--text-on-dark);
+    /* font-family: "Montserrat", sans-serif;
+     */
+}
+
+.header{
+    position: sticky;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    padding: 15px 75px;
+    /* background-color: red; */
+    flex-direction: row;
+    justify-content: space-between;
+    /* width: 95%; */
+    text-align: center;
+    /* left: 50%; */
+    /* transform: translateX(-50%); */
+    /* background-color: var(--navbar-bg); */
+}
+#logo-img{
+    width: 106px;
+    /* position: absolute; */
+    margin-left: 12px;
+    margin-top: 10px;
+  
+}
+
+.nav-item{
+    margin: 0 20px;
+}
+.nav-items a{
+    padding: 0px 8px;
+    text-align: center;
+    margin: 1px;
+    font-weight: 600;
+    /* border-left: 1px solid blue; */
+    align-items: center;
+    align-self: center;
+    vertical-align: middle;
+}
+
+.nav-items a:hover{
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
+#toggle-img {
+    width: 20px;
+    filter: invert();
+    position: fixed;
+    right: 30px;
+    
+}
+#close-img {
+    width: 12px;
+    position: absolute;
+    right:-15px;
+    float: left;
+    top: -20px;
+    
+}
+#hamburger-img{
+    width: 20px;
+}
+
+@media screen and (max-width: 800px){
+    .nav-items{
+        display: none;
+    }   
+    .nav-items-mobile{
+        transform: translateX(100%); /* Start off-screen (to the right) */
+    transition: transform 0.2s ease-in-out; /* Smooth slide-in animation */
+        display: flex;
+        position: fixed;
+        background-color: black;
+        width: 50%;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        height: 100vh;
+        border-radius: 20px 0px 0px 20px;
+        visibility: hidden; /* Start hidden */
+        opacity: 0;
+    }
+    .nav-items-mobile a{
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .nav-items-mobile.visible{
+        display: flex;
+        transform: translateX(0%);
+        opacity: 100;
+        visibility: visible;
+    }
+    #logo-img{
+        margin-left: -40px;
+    }
+}
+
+@media screen and (min-width: 801px) {
+    #toggle-img{
+        display: none;
+    }
+    .nav-items-mobile{
+      display: none;
+    }
+}

@@ -1,0 +1,146 @@
+#gradiant-container{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    font-family: "DM Sans", serif;
+    /* display: inline-block; */
+}
+
+#gradiant-img{
+    margin: auto;
+    height: auto;
+    /* position: relative; */
+    border-radius: 30px;
+    width: 98%;
+    aspect-ratio: 21/9;
+    /* display: none; */
+}
+#content{
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    width:100%;
+    /* transform: translateX(-25%);
+    left: 25%; */
+}
+#content h1{
+    font-size: 3em;
+    font-family: "DM Sans";
+    font-weight: 500;
+}
+.steps-container{
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 100px 50px;
+    gap: 20px;
+    /* width: 90%; */
+    /* border-bottom: 3px solid white; */
+}
+
+.step{
+    border: 3.5px solid rgb(255, 255, 255);
+    width: fit-content;
+    font-family: "DM Sans", serif;    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 3em;
+    font-weight: 500;
+    color: white;
+    /* background-color: rgba(63, 63, 63, 0.626); */
+}
+
+.gradiant-foot h2{
+    font-size: 8em;
+    font-family: "DM Sans", serif;
+    font-weight: 300;
+}
+
+/* Marquee container */
+.marquee {
+    width: 98%;
+    text-align: center;
+    margin: auto;
+    font-size: 8em;
+    color: white;
+    border-bottom: 3px solid white;
+    overflow: hidden;
+    font-family: "DM Sans", serif;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Scrolling text */
+.marquee-content {
+    display: inline-block;
+    padding-left: 100%;  /* Start outside the viewport */
+    animation: scroll 20s linear infinite;
+}
+
+/* Animation keyframe */
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (max-width: 1250px ){
+    .step {
+        font-size: 1.4em;
+    }
+    .marquee{
+        font-size: 2em;
+        border-bottom: 0px;
+
+    }
+}
+@media screen and (max-width: 750px ){
+    .step {
+        font-size: 2em;
+    }
+    .marquee{
+        font-size: 4em;
+        border-bottom: 0px;
+
+    }
+    
+    #gradiant-img{
+        aspect-ratio: 1/1;
+    }
+}
+@media screen and (max-width: 600px ){
+    .step {
+        font-size: 1.2em;
+        width: 100%;
+    }
+    #gradiant-img{
+        aspect-ratio: 2/3;
+    }
+
+    .steps-container{
+        margin: 90px 50px;
+    }
+    #content{
+        top: 80%;
+    }
+    .marquee{
+        font-size: 2em;
+        border-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 300px ){
+    .step {
+        font-size:0.6em;
+    }
+    .marquee{
+        text-wrap: wrap;
+        font-size: 1.5em;
+    }
+}

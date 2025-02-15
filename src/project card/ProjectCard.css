@@ -1,0 +1,79 @@
+.proj-card{
+   /* min-width: 30%; */
+  width: 30%;
+   padding: 17px 10px 30px 10px;
+   background-color: rgb(10, 10, 10);
+   border-radius: 20px;
+   text-align: center;
+   transition: 0.3s ease-in-out;
+}
+
+.proj-card:hover{
+    background-color: rgb(29, 29, 29);
+    transform: scale(1.01)
+}
+
+.project-img{
+    width: 100%;
+    border-radius: 17px;
+}
+.proj-card h3{
+    margin: 8px 0;
+}
+.proj-card p{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+.view-proj-btn{
+    background-color: rgb(24, 24, 24);
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid rgb(41, 41, 41);
+    font-size: 0.9em;
+    cursor: pointer;
+    
+    transition: 0.3s ease-in-out;
+}
+.view-proj-btn:hover{
+    background-color: rgb(67, 67, 67);
+}
+
+@media screen and (max-width:800px) {
+    .proj-card{
+        width: 95%;
+    }
+    .proj-card h3{
+        font-size: 1.5em;
+    }
+    .proj-card p{
+        font-size: 1.3em;
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+    .proj-card {
+        width: 45%; /* Adjust width for medium screens */
+    }
+    .proj-card h3 {
+        font-size: 1.4em;
+    }
+    .proj-card p {
+        font-size: 1.2em;
+        width: 85%;
+    }
+}
+@media screen and (min-width: 101px) and (max-width: 400px) {
+    .proj-card {
+        width: 90%; /* Make cards take more width on small screens */
+    }
+    .proj-card h3 {
+        font-size: 1.2em; /* Slightly larger text for readability */
+    }
+    .proj-card p {
+        font-size: 1em;
+        width: 90%;
+    }
+}
