@@ -17,6 +17,7 @@ function Projects() {
     require('../assets/forumhub.png'),
     require('../assets/momento.png'),
     require('../assets/ecommerce.png'),
+    require('../assets/Alumni.png'),
     require('../assets/astrixui-movies.png'),
     require('../assets/novitos-main.jpg')
   ];
@@ -27,11 +28,20 @@ function Projects() {
     require('../assets/momento-mobile.png'),
     require('../assets/ecommerce-mobile.png'),
     require('../assets/astrixuimovies-mobile.png'),
-    require('../assets/novitos-mobile.jpg')
+    require('../assets/novitos-mobile.jpg'),
+    require('../assets/alumni-mobile.png')
+
   ];
 
   // Static project data for ProjectCard (remains unchanged)
   const projectData = [
+     {
+      imgSrc: require('../assets/Alumni.png'),
+      title: 'SRM Alumni Portal',
+      description: 'Connects SRM students and alumni with messaging, filters, and notifications.',
+      link: 'https://alumni-srmup.in/admin/index.php'
+    },
+    
     {
       imgSrc: require('../assets/forumhub.png'),
       title: 'Forum Hub',
@@ -61,6 +71,12 @@ function Projects() {
       title: 'Novitos',
       description: 'A note-taking app with multiple handy features.',
       link: 'https://github.com/astrix-ui/Novitos-NotesWebsite.github.io'
+    },
+    {
+      imgSrc: require('../assets/passop.png'),
+      title: 'Password Manager',
+      description: 'A Password Manager application with fully functioning backend and MongoDB Database.',
+      link: 'https://github.com/astrix-ui/Password-Manager'
     },
     {
       imgSrc: require('../assets/aai.png'),

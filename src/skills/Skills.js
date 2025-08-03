@@ -18,6 +18,42 @@ const Skills = () =>{
                 </div>
 
                 <div className='box'>
+                    <img src={require('../assets/mongo.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/vercel.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/docker.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/express.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/jwt.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/node.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/tailwind.png')} className='skill-img'></img>
+                </div>
+
+                <div className='box'>
+                    <img src={require('../assets/git.png')} className='skill-img'></img>
+                </div>
+
+                
+
+                
+
+                <div className='box'>
                     <img src={require('../assets/css.png')} className='skill-img'></img>
                 </div>
 
