@@ -1,69 +1,100 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  --about-bg-dark: rgb(10, 10, 10);
+  --about-text-dark: rgb(223, 223, 223);
+  --about-subtext-dark: rgb(185, 185, 185);
+
+  --about-bg-light: #f5f5f5;
+  --about-text-light: #121212;
+  --about-subtext-light: #555555;
+}
+
+/* ================= ABOUT CONTAINER ================= */
 .about-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
-    /* width: 100%; */
-    /* background-color: #f4f4f4; */
-  }
-  
-  .about-card {
-    background: rgb(10, 10, 10);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 98%;
-    /* height: 80vh; */
-    /* max-width: 400px; */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 7px;
+}
+
+/* ================= ABOUT CARD ================= */
+.about-card {
+  background-color: var(--about-bg-dark);
+  color: var(--about-text-dark);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 98%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ================= PHOTO ================= */
+.about-photo {
+  width: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* ================= NAME & LEADING ================= */
+.aka-leading {
+  font-style: italic;
+  color: var(--about-subtext-dark);
+}
+
+.aka {
+  font-weight: 900;
+}
+
+.about-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* ================= DESCRIPTION ================= */
+.about-description {
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--about-subtext-dark);
+  margin-bottom: 20px;
+}
+
+/* ================= EDUCATION ================= */
+.about-education {
+  text-align: left;
+}
+
+.about-education h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.about-education ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.about-education li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* ================= LIGHT THEME OVERRIDES ================= */
+[data-theme="light"] .about-card {
+  background-color: var(--about-bg-light);
+  color: var(--about-text-light);
+}
+
+[data-theme="light"] .about-description,
+[data-theme="light"] .aka-leading {
+  color: var(--about-subtext-light);
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 569px) {
   .about-photo {
-    width: 220px;
-    /* height: 120px; */
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
+    width: 170px;
   }
-  .aka-leading{
-    font-style: italic;
-    color: #7a7a7a;
-  }
-  .aka{
-    font-weight: 900;
-  }
-  .about-name {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .about-description {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #b9b9b9;
-    margin-bottom: 20px;
-  }
-  
-  .about-education {
-    text-align: left;
-  }
-  
-  .about-education h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .about-education ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .about-education li {
-    font-size: 14px;
-    margin-bottom: 5px;
-  }
-  @media screen and (max-width:569px) {
-    .about-photo{
-        width: 170px;
-    }
-  }
+}

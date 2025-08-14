@@ -1,31 +1,34 @@
-/* VARS COLOR  */
+/* ================= HERO SECTION ================= */
 
-:root {
-    --bg-dark : rgb(0, 0, 0);
-    --text-on-dark : rgb(223, 223, 223);
-    --navbar-bg : rgb(158, 158, 158);
-  }
-
-body{
-    color: var(--text-on-dark);
-    /* font-family: "Montserrat", sans-serif; */
-font-family: "DM Sans", serif;
-    
-}
-
-#hero-section-div{
-    /* position: absolute; */
-    /* top: 100px; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    background-color: rgb(5, 5, 5);
+/* Hero section container */
+#hero-section-div {
+    background-color: var(--hero-bg-dark);
+    color: var(--hero-text-dark);
     display: block;
     width: 99%;
     border-radius: 30px;
     text-align: center;
+    margin: auto;
     padding: 100px 0px;
-    
+    transition: background-color 0.3s, color 0.3s;
 }
+
+/* Make all child elements inherit color */
+#hero-section-div .p-heading,
+#hero-section-div .p-leading,
+#hero-section-div #github-btn,
+#hero-section-div #github-btn p,
+#hero-section-div #github-btn #btn-text {
+    color: inherit;
+}
+
+/* Light theme overrides */
+[data-theme="light"] #hero-section-div {
+    background-color: var(--hero-bg-light);
+    color: var(--hero-text-light);
+}
+
+/* ================= HERO TEXT ================= */
 .intro-text{
     width: 40%;
     margin: 50px auto;
@@ -35,89 +38,79 @@ font-family: "DM Sans", serif;
     font-size: 5.5em;
     margin: 0px;
     font-weight: 400;
-    /* letter-spacing:1%; */
     line-height: 1.0em;
     margin-bottom: 40px;
 }
-/* .p-heading-2{
-    font-size: 3.5em;
-} */
 
 .p-leading{
     line-height: 1.3em;
     font-size: 1.2em;
     font-weight: 400;
-    color: rgb(176, 176, 176);
     margin-bottom: 60px;
+    /* removed hardcoded color, inherits parent */
 }
 
-#github-btn{
-   
-    background-color: rgb(19, 19, 19);
+/* ================= GITHUB BUTTON ================= */
+#github-btn {
+    background-color: var(--github-bg-dark);
+    color: var(--github-text-dark);
     padding: 17px 30px;
     border-radius: 50px;
     border: 1px solid rgb(41, 41, 41);
     font-size: 0.9em;
     transition: 0.3s ease-in-out;
 }
+
 #github-btn #btn-text{
     font-weight: 550;
 }
+
 #github-btn p{
     display: inline;
-    
-}
-#github-btn #arrow{
-    margin-left: 10px;
-    
-}
-#github-btn:hover{
-    background-color: rgb(41, 41, 41);
 }
 
-/* ANIMATION  */
-/* Initial State */
-/* Initial Hidden State */
+#github-btn #arrow{
+    margin-left: 10px;
+}
+
+#github-btn:hover{
+    background-color: var(--github-hover-bg-dark);
+    color: var(--github-text-hover-dark);
+}
+
+[data-theme="light"] #github-btn {
+    background-color: var(--github-bg-light);
+    color: var(--github-text-light);
+}
+
+[data-theme="light"] #github-btn:hover {
+    background-color: var(--github-hover-bg-light);
+    color: var(--github-text-hover-light);
+}
+
+/* ================= ANIMATION ================= */
 .p-heading, .p-leading, #github-btn {
     opacity: 0;
     transform: translateY(50px);
     animation: slideUp 1.2s ease-out forwards; 
-  }
-  
-  /* Animation Keyframe */
-  @keyframes slideUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Staggered Delays */
-  .p-heading {
-    animation-delay: 0.3s;
-  }
-  
-  .p-leading {
-    animation-delay: 0.6s;
-  }
-  
-  #github-btn {
-    animation-delay: 0.9s;
-  }
-  
-  
+}
 
-@media  screen and (max-width:600px) {
-    .intro-text{
-        width: 80%;
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .p-heading{
-        font-size: 4em;
-    }
-    .p-leading{
-        font-size: 1em;
-    }
-    #github-btn{
-        font-size: 0.8em;
-    }
+}
+
+/* Staggered animation delays */
+.p-heading { animation-delay: 0.3s; }
+.p-leading { animation-delay: 0.6s; }
+#github-btn { animation-delay: 0.9s; }
+
+/* ================= MEDIA QUERIES ================= */
+@media screen and (max-width:600px) {
+    .intro-text{ width: 80%; }
+    .p-heading{ font-size: 4em; }
+    .p-leading{ font-size: 1em; }
+    #github-btn{ font-size: 0.8em; }
 }

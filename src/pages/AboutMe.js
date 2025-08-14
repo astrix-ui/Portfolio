@@ -3,6 +3,7 @@ import './aboutme.css';
 import Skills from '../skills/Skills';
 import Academic from '../academics/Academic';
 import Footer from '../footer/Footer';
+import ExperienceTimeline from '../experience/ExpereienceTimeline';
 
 const AboutMe = () => {
   useEffect(() => {
@@ -31,9 +32,10 @@ const AboutMe = () => {
         </div> */}
         <Academic />
         <Skills />
-        
+        <ExperienceTimeline />
       </div>
     </div>
+
         <Footer />
         </>
   );

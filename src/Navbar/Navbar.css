@@ -18,6 +18,7 @@ body{
     flex-direction: row;
     justify-content: space-between;
     /* width: 95%; */
+    margin: 10px 0;
     text-align: center;
     /* left: 50%; */
     /* transform: translateX(-50%); */
@@ -111,3 +112,4 @@ body{
       display: none;
     }
 }
+

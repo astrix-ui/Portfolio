@@ -1,0 +1,185 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  /* Dark Theme (default) */
+  --exp-bg-dark: rgb(5,5,5);
+  --exp-text-dark: rgb(223,223,223);
+  --exp-card-bg-dark: rgb(29,29,29);
+  --exp-card-text-dark: rgb(197,197,197);
+  --exp-title-dark: rgb(0,208,255);
+  --exp-subtitle-dark: rgb(193,225,233);
+  --exp-line-dark: #00aaff;
+  --exp-arrow-dark: #1a1a1a;
+
+  /* Light Theme */
+  --exp-bg-light: #f5f5f5;
+  --exp-text-light: #121212;
+  --exp-card-bg-light: #e0e0e0;
+  --exp-card-text-light: #121212;
+  --exp-title-light: #0077cc;
+  --exp-subtitle-light: #333333;
+  --exp-line-light: #0077cc;
+  --exp-arrow-light: #b0b0b0;
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  background-color: var(--exp-bg-dark);
+  color: var(--exp-text-dark);
+  width: 99%;
+  margin: 20px auto;
+  border-radius: 30px;
+  text-align: center;
+  padding: 50px 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] .container {
+  background-color: var(--exp-bg-light);
+  color: var(--exp-text-light);
+}
+
+/* ================= HEADING ================= */
+.p-heading2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: inherit;
+}
+
+/* ================= TIMELINE CONTENT ================= */
+.vertical-timeline-element-content {
+  background: var(--exp-card-bg-dark);
+  color: var(--exp-card-text-dark);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] .vertical-timeline-element-content {
+  background: var(--exp-card-bg-light);
+  color: var(--exp-card-text-light);
+}
+
+.vertical-timeline-element-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: var(--exp-title-dark);
+}
+
+[data-theme="light"] .vertical-timeline-element-title {
+  color: var(--exp-title-light);
+}
+
+.vertical-timeline-element-subtitle {
+  margin-bottom: 10px;
+  color: var(--exp-subtitle-dark);
+}
+
+[data-theme="light"] .vertical-timeline-element-subtitle {
+  color: var(--exp-subtitle-light);
+}
+
+.vertical-timeline-element-content ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.vertical-timeline-element-content li {
+  text-align: justify;
+  line-height: 1.6;
+}
+
+/* ================= TIMELINE LINE & ARROW ================= */
+.vertical-timeline::before {
+  background: var(--exp-line-dark);
+  width: 2px;
+  transition: background 0.3s;
+}
+
+[data-theme="light"] .vertical-timeline::before {
+  background: var(--exp-line-light);
+}
+
+.vertical-timeline-element-content-arrow {
+  border-right: 7px solid var(--exp-arrow-dark);
+  transition: border-color 0.3s;
+}
+
+[data-theme="light"] .vertical-timeline-element-content-arrow {
+  border-right: 7px solid var(--exp-arrow-light);
+}
+
+/* ================= TIMELINE ICON ================= */
+.vertical-timeline-element-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* ================= RESPONSIVE MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+  .p-heading2 { font-size: 1.5rem; }
+  .vertical-timeline-element-title { font-size: 1.2rem; }
+  .vertical-timeline-element-subtitle { font-size: 0.95rem; }
+  .vertical-timeline-element-content li { font-size: 0.9rem; }
+  .vertical-timeline-element-content { padding: 15px; }
+  .vertical-timeline::before { width: 1.5px; }
+  .vertical-timeline-element-icon { width: 14px; height: 14px; }
+}
+
+@media (max-width: 480px) {
+  .p-heading2 { font-size: 1.2rem; }
+  .vertical-timeline-element-title { font-size: 1rem; }
+  .vertical-timeline-element-subtitle { font-size: 0.85rem; }
+  .vertical-timeline-element-content li { font-size: 0.8rem; }
+  .vertical-timeline-element-content { padding: 10px; }
+  .vertical-timeline::before { width: 1px; }
+  .vertical-timeline-element-icon { width: 10px; height: 10px; }
+}
+
+
+/* Timeline content using theme variables */
+.timeline-element .vertical-timeline-element-content {
+  background: var(--exp-card-bg-dark);
+  color: var(--exp-card-text-dark);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] .timeline-element .vertical-timeline-element-content {
+  background: var(--exp-card-bg-light);
+  color: var(--exp-card-text-light);
+}
+
+/* Timeline arrow */
+.timeline-element .vertical-timeline-element-content-arrow {
+  border-right: 7px solid var(--exp-arrow-dark);
+  transition: border-color 0.3s;
+}
+
+[data-theme="light"] .timeline-element .vertical-timeline-element-content-arrow {
+  border-right: 7px solid var(--exp-arrow-light);
+}
+
+/* Titles & subtitles */
+.timeline-element .vertical-timeline-element-title {
+  color: var(--exp-title-dark);
+}
+
+[data-theme="light"] .timeline-element .vertical-timeline-element-title {
+  color: var(--exp-title-light);
+}
+
+.timeline-element .vertical-timeline-element-subtitle {
+  color: var(--exp-subtitle-dark);
+}
+
+[data-theme="light"] .timeline-element .vertical-timeline-element-subtitle {
+  color: var(--exp-subtitle-light);
+}

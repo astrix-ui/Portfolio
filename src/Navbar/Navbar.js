@@ -1,66 +1,73 @@
-import React, {useState} from 'react'
-import './Navbar.css'
+import React, { useState } from "react";
+import "./Navbar.css";
+import { FaSun, FaMoon } from "react-icons/fa";
 
+// Import both light and dark versions of hamburger and close icons
+import HamburgerDark from "../assets/hamburger_dark.png";
+import HamburgerLight from "../assets/hamburger_light.png";
+import CloseDark from "../assets/close_dark.png";
+import CloseLight from "../assets/close_light.png";
+import Logo from "../assets/watermark.png";
 
-const Navbar = () => {
-    const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
-  
-    const [isHamburgerVisible, setHamburgerVisible] = useState(true);
-    const [isCloseVisible, setCloseVisible] = useState(false);
+const Navbar = ({ toggleTheme, theme }) => {
+  const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
 
-    const handleToggleMenu = (e) =>{
-        e.preventDefault();
-        
-        
-        setMobileMenuVisible((prevState) => {
-            setHamburgerVisible(false);
-            setCloseVisible(true);
-            return !prevState;
-        });
-        
-    }
-    const getMobileClass = () =>{
-        return isMobileMenuVisible ? "nav-items-mobile visible" : "nav-items-mobile";
-    }
+  const handleToggleMenu = (e) => {
+    e.preventDefault();
+    setMobileMenuVisible((prev) => !prev);
+  };
 
-    return(
-        <>
-        <header className='header'>
-            <h2 id='logo'>
-                <img src={require('../assets/watermark.png')} id='logo-img'></img>
-                {/* Ayush Sharma */}
-            </h2>
+  const getMobileClass = () => {
+    return isMobileMenuVisible
+      ? "nav-items-mobile visible"
+      : "nav-items-mobile";
+  };
 
-            <nav className='nav-elements'>
-               <div className='nav-items'>
+  return (
+    <header className="header">
+      <h2 id="logo">
+        <img src={Logo} id="logo-img" alt="Logo" />
+      </h2>
 
-               <a href = "/">Home</a>
-               <a href = "/Projects">Projects</a>
-               <a href = "/AboutMe">About Me</a>
-               <a href = "/ContactMe">Contact Me</a>
-               </div>
+      <nav className="nav-elements">
+        <div className="nav-items">
+          <a href="/">Home</a>
+          <a href="/Projects">Projects</a>
+          <a href="/AboutMe">About Me</a>
+          <a href="/ContactMe">Contact Me</a>
+        </div>
 
-            <div className={getMobileClass()}>
-           
-            <a href = "/">Home</a>
-               <a href = "/Projects">Projects</a>
-               <a href = "/AboutMe">About Me</a>
-               <a href = "/ContactMe">Contact Me</a>
-            </div>
-            </nav>
+        <div className={getMobileClass()}>
+          <a href="/">Home</a>
+          <a href="/Projects">Projects</a>
+          <a href="/AboutMe">About Me</a>
+          <a href="/ContactMe">Contact Me</a>
+        </div>
+      </nav>
 
-            <a href='/' id='toggle-img' onClick={ (e) => handleToggleMenu(e)}>
-          
-            {isMobileMenuVisible ? (
-                        <img src={require('../assets/close.png')} id='close-img'  alt="Close Menu" />
-                    ) : (
-                        <img src={require('../assets/hamburger.png')} id='hamburger-img' alt="Open Menu" />
-                    )}
-            </a>
+      {/* Hamburger / Close button */}
+      <a href="/" id="toggle-img" onClick={handleToggleMenu}>
+        {isMobileMenuVisible ? (
+          <img
+            src={theme === "dark" ? CloseDark : CloseLight}
+            id="close-img"
+            alt="Close Menu"
+          />
+        ) : (
+          <img
+            src={theme === "dark" ? HamburgerDark : HamburgerLight}
+            id="hamburger-img"
+            alt="Menu"
+          />
+        )}
+      </a>
 
-        </header>
-        </>
-    )
-}
+      {/* Theme toggle button */}
+      <button onClick={toggleTheme} className="theme-btn">
+        {theme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
+      </button>
+    </header>
+  );
+};
 
 export default Navbar;

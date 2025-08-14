@@ -1,125 +1,129 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  --academics-bg-dark: rgb(5,5,5);
+  --academics-text-dark: rgb(223,223,223);
+  --box-bg-dark: rgb(29,29,29);
+  --box-border-dark: rgb(35,35,35);
+  --marks-color-dark: rgb(0,208,255);
+
+  --academics-bg-light: #f5f5f5;
+  --academics-text-light: #121212;
+  --box-bg-light: #e0e0e0;
+  --box-border-light: #b0b0b0;
+  --marks-color-light: rgb(0,108,255);
+}
+
+/* ================= CONTAINER ================= */
 #container {
-    width: 100%;
-    text-align: center;
-    margin-top: 20px; /* Adjust as needed */
-    background-color: rgb(5,5,5);
-    border-radius: 30px;
-    width: 99%;
-    padding: 20px;
-  }
+  width: 99%;
+  text-align: center;
+  margin-top: 20px;
+  margin: auto;
+  background-color: var(--academics-bg-dark);
+  color: var(--academics-text-dark);
+  border-radius: 30px;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="light"] #container {
+  background-color: var(--academics-bg-light);
+  color: var(--academics-text-light);
+}
+
+/* ================= TEXT ================= */
 .p-heading2 {
-    font-size: 3em;
-    font-weight: 400;
+  font-size: 3em;
+  font-weight: 400;
+  color: inherit;
 }
-#p-academic{
-    padding: 20px;
-    width: 60%;
-    margin: auto;
+
+#p-academic {
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+  color: inherit;
 }
-#box-container{
-    width: 60%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 20px;
-    flex-wrap: wrap;
+
+/* ================= BOXES ================= */
+#box-container {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.box{
-    width: 21%;            /* Adjust based on layout */
-    aspect-ratio: 1 / 1; 
-    /* padding: 10px; */
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(29, 29, 29);
-    border: 1px solid rgb(35, 35, 35);
-    /* box-shadow: 1px 1px 5px rgba(109, 109, 109, 0.315); */
-    border-radius: 20px;
-    transition: 0.3s ease-in-out;
-    user-select: none;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.6s ease-out;
+
+.box {
+  width: 21%;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--box-bg-dark);
+  border: 1px solid var(--box-border-dark);
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  opacity: 0;
+  transform: scale(0.8);
+  color: inherit;  /* inherit theme text color */
 }
+
+[data-theme="light"] .box {
+  background-color: var(--box-bg-light);
+  border: 1px solid var(--box-border-light);
+}
+
 .box.show {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-.box:hover{
-    transform: scale(102%);
+  opacity: 1;
+  transform: scale(1);
 }
 
-.marks-detail{
-    font-size: 2.7em;
-    color: rgb(0, 208, 255);
-    font-weight: 100;
-}
-.box-heading{
-    font-size: 1.3em;
-    font-weight: 500;
-}
-.box-detail{
-    font-size: 0.9em;
+.box:hover {
+  transform: scale(1.02);
 }
 
+/* ================= MARKS & TEXT ================= */
+.marks-detail {
+  font-size: 2.7em;
+  color: var(--marks-color-dark);
+  font-weight: 100;
+  transition: color 0.3s;
+}
 
+[data-theme="light"] .marks-detail {
+  color: var(--marks-color-light);
+}
+
+.box-heading, .box-detail {
+  color: inherit;
+}
+
+/* ================= MEDIA QUERIES ================= */
 @media screen and (max-width:1200px) {
-    .marks-detail{
-        font-size: 2.5em;
-       
-    }
-    .box-heading{
-        font-size: 1.1em;
-    }
-    .box-detail{
-        font-size: 0.9em;
-    }
-    .box{
-        width: 30%;
-    } 
+  .marks-detail { font-size: 2.5em; }
+  .box-heading { font-size: 1.1em; }
+  .box-detail { font-size: 0.9em; }
+  .box { width: 30%; } 
 }
 
 @media screen and (max-width:850px) {
-    .box{
-        width: 40%;
-    }
-    .marks-detail{
-        font-size: 2em;
-       
-    }
-    .box-heading{
-        font-size: 1em;
-    }
-    .box-detail{
-        font-size: 0.7em;
-    }
-       
+  .box { width: 40%; }
+  .marks-detail { font-size: 2em; }
+  .box-heading { font-size: 1em; }
+  .box-detail { font-size: 0.7em; }
 }
 
 @media screen and (max-width:500px) {
-    #p-academic{
-        width: 100%;
-    }
-    #box-container{
-        width: 80%;
-    }
-    .box{
-        width: 100%;
-        aspect-ratio: 2/1;
-    }
-    .marks-detail{
-        font-size: 2em;
-       
-    }
-    .box-heading{
-        font-size: 1em;
-    }
-    .box-detail{
-        font-size: 0.7em;
-    }
-       
+  #p-academic { width: 100%; }
+  #box-container { width: 80%; }
+  .box { width: 100%; aspect-ratio: 2/1; }
+  .marks-detail { font-size: 2em; }
+  .box-heading { font-size: 1em; }
+  .box-detail { font-size: 0.7em; }
 }

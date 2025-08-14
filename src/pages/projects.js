@@ -127,7 +127,7 @@ function Projects() {
         </Swiper>
       </div>
 
-      <h2 className='title'>Project List</h2>
+      <h2 className="p-heading2 custom-head"  >Projects</h2>
 
       <div className='proj-container'>
         {projectData.map((project, index) => (

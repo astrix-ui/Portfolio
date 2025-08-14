@@ -1,79 +1,123 @@
-.proj-card{
-   /* min-width: 30%; */
+/* ================= THEME VARIABLES ================= */
+:root {
+  --proj-card-bg-dark: rgb(10, 10, 10);
+  --proj-card-hover-dark: rgb(29, 29, 29);
+  --proj-card-text-dark: rgb(223, 223, 223);
+  --proj-btn-bg-dark: rgb(24, 24, 24);
+  --proj-btn-hover-dark: rgb(67, 67, 67);
+  --proj-btn-text-dark: rgb(223, 223, 223);
+  --proj-heading-dark: rgb(223, 223, 223);
+
+  /* Light theme */
+  --proj-card-bg-light: #f5f5f5;
+  --proj-card-hover-light: #e0e0e0;
+  --proj-card-text-light: #121212;
+  --proj-btn-bg-light: #e0e0e0;
+  --proj-btn-hover-light: #b0b0b0;
+  --proj-btn-text-light: #121212;
+  --proj-heading-light: #121212;
+}
+
+/* ================= PROJECT SECTION HEADING ================= */
+#projects-section .p-heading2, /* if heading inside a section with id="projects-section" */
+.p-heading2 {
+  font-size: 3em;
+  font-weight: 400;
+  color: var(--proj-heading-dark) !important;
+  transition: color 0.3s;
+}
+
+[data-theme="light"] #projects-section .p-heading2,
+[data-theme="light"] .p-heading2 {
+  color: var(--proj-heading-light) !important;
+}
+
+
+/* ================= PROJECT CARD STYLES ================= */
+.proj-card {
   width: 30%;
-   padding: 17px 10px 30px 10px;
-   background-color: rgb(10, 10, 10);
-   border-radius: 20px;
-   text-align: center;
-   transition: 0.3s ease-in-out;
+  padding: 17px 20px 30px 20px;
+  background-color: var(--proj-card-bg-dark);
+  border-radius: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  color: var(--proj-card-text-dark);
+  margin: 15px;
 }
 
-.proj-card:hover{
-    background-color: rgb(29, 29, 29);
-    transform: scale(1.01)
+.proj-card h3,
+.proj-card p {
+  margin-top: 10px;
+  color: inherit; /* inherit card text color */
 }
 
-.project-img{
+.proj-card:hover {
+  background-color: var(--proj-card-hover-dark);
+  transform: scale(1.01);
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.view-proj-btn {
+  background-color: var(--proj-btn-bg-dark);
+  color: var(--proj-btn-text-dark);
+  padding: 12px 20px;
+  border-radius: 50px;
+  border: 1px solid rgb(41, 41, 41);
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.view-proj-btn:hover {
+  background-color: var(--proj-btn-hover-dark);
+}
+
+/* ================= LIGHT THEME OVERRIDES ================= */
+[data-theme="light"] .proj-card {
+  background-color: var(--proj-card-bg-light);
+  color: var(--proj-card-text-light);
+}
+
+[data-theme="light"] .proj-card h3,
+[data-theme="light"] .proj-card p {
+  color: inherit;
+}
+
+[data-theme="light"] .proj-card:hover {
+  background-color: var(--proj-card-hover-light);
+}
+
+[data-theme="light"] .view-proj-btn {
+  background-color: var(--proj-btn-bg-light);
+  color: var(--proj-btn-text-light);
+}
+
+[data-theme="light"] .view-proj-btn:hover {
+  background-color: var(--proj-btn-hover-light);
+}
+
+/* ================= RESPONSIVE STYLES ================= */
+@media screen and (max-width: 1000px) {
+  .proj-card { width: 45%; }
+}
+
+@media screen and (max-width: 800px) {
+  .proj-card { width: 95%; }
+  .proj-card h3 { font-size: 1.5em; }
+  .proj-card p { font-size: 1.3em; width: 90%; }
+}
+
+@media screen and (max-width: 500px) {
+  .proj-card {
     width: 100%;
-    border-radius: 17px;
-}
-.proj-card h3{
-    margin: 8px 0;
-}
-.proj-card p{
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 30px;
-}
-.view-proj-btn{
-    background-color: rgb(24, 24, 24);
-    padding: 12px 20px;
-    border-radius: 50px;
-    border: 1px solid rgb(41, 41, 41);
-    font-size: 0.9em;
-    cursor: pointer;
-    
-    transition: 0.3s ease-in-out;
-}
-.view-proj-btn:hover{
-    background-color: rgb(67, 67, 67);
-}
-
-@media screen and (max-width:800px) {
-    .proj-card{
-        width: 95%;
-    }
-    .proj-card h3{
-        font-size: 1.5em;
-    }
-    .proj-card p{
-        font-size: 1.3em;
-        width: 80%;
-    }
-}
-
-@media screen and (min-width: 801px) and (max-width: 1000px) {
-    .proj-card {
-        width: 45%; /* Adjust width for medium screens */
-    }
-    .proj-card h3 {
-        font-size: 1.4em;
-    }
-    .proj-card p {
-        font-size: 1.2em;
-        width: 85%;
-    }
-}
-@media screen and (min-width: 101px) and (max-width: 400px) {
-    .proj-card {
-        width: 90%; /* Make cards take more width on small screens */
-    }
-    .proj-card h3 {
-        font-size: 1.2em; /* Slightly larger text for readability */
-    }
-    .proj-card p {
-        font-size: 1em;
-        width: 90%;
-    }
+    padding: 5px 5px 30px 5px;
+    border-radius: 10px;
+  }
+  .proj-card h3 { font-size: 1.2em; }
+  .proj-container { padding: 0; gap: 0; }
+  .proj-card p { font-size: 1em; width: 95%; }
 }

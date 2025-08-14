@@ -3,6 +3,7 @@ import Academic from './academics/Academic';
 import './App.css';
 import HeroSection from './hero section/HeroSection';
 import Navbar from './Navbar/Navbar';
+import { useState, useEffect } from "react";
 import Skills from './skills/Skills';
 import Home from './pages/home';
 import Projects from './pages/projects';
@@ -11,16 +12,30 @@ import ContactMe from './pages/Contactme';
 import ThankYou from './thankyou';
 
 function App() {
+  // Load theme from localStorage or default to dark
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "dark";
+  });
+
+  // Apply theme globally whenever it changes
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <Router>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} theme={theme} />
       <Routes>
         <Route path="/" element={ <Home /> } />
         <Route path="/Projects" element={ <Projects /> } />
         <Route path="/AboutMe" element={ <AboutMe /> } />
         <Route path="/ContactMe" element={ <ContactMe /> } />
         <Route path="/thankyou" element= {<ThankYou />} />
-
       </Routes>
     </Router>
   );

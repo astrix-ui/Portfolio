@@ -10,6 +10,11 @@
     /* background-color: red; */
     justify-content: center;
   }
+  .custom-head{
+    font-weight: 800;
+    margin-bottom: 0;
+    margin-top: 50px;
+  }
   
   .swiper {
     border-radius: 20px;

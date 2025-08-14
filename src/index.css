@@ -1,33 +1,149 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  /* Dark theme (default) */
+  --bg-color: rgb(0, 0, 0);
+  --text-color: rgb(223, 223, 223);
+  --link-color: rgb(223, 223, 223);
+  --link-hover-dark: white;
+--exp-card-bg-dark: #1d1d1d;
+  --exp-card-text-dark: #c5c5c5;
+  --exp-arrow-dark: #1a1a1a;
+  --exp-title-dark: #00d0ff;
+  --exp-subtitle-dark: #c1e1e9;
+  --hero-bg-dark: rgb(5, 5, 5);
+  --hero-text-dark: rgb(223, 223, 223);
+
+  --github-bg-dark: rgb(19, 19, 19);
+  --github-hover-bg-dark: rgb(41, 41, 41);
+  --github-text-dark: rgb(223, 223, 223);
+  --github-text-hover-dark: rgb(255, 255, 255);
+}
+
+[data-theme="light"] {
+  /* Light theme */
+  --bg-color: #ffffff;
+  --exp-card-bg-light: #f5f5f5;
+  --exp-card-text-light: #121212;
+  --exp-arrow-light: #999999;
+  --exp-title-light: #0066cc;
+  --exp-subtitle-light: #555555;
+  --text-color: #121212;
+  --link-color: #363636;
+  --link-hover-light: #1e90ff; /* lighter hover color */
+
+  --hero-bg-light: #f5f5f5;
+  --hero-text-light: #121212;
+
+  --github-bg-light: #e0e0e0;
+  --github-hover-bg-light: #f3f3f3;
+  --github-text-light: #121212;
+  --github-text-hover-light: rgb(189, 178, 178);
+}
+
+/* ================= GLOBAL STYLES ================= */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--bg-dark);
-  color: var(--text-on-dark);
   -moz-osx-font-smoothing: grayscale;
-  text-shadow: 1px 1px 10px rgba(88, 88, 88, 0.433);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-/* COLOR VARS  */
-
-:root {
-  --bg-dark : rgb(5,5,5);
-  --text-on-dark : rgb(223, 223, 223);
-}
-
-a{
+a {
   text-decoration: none;
-  color: var(--text-on-dark);
+  color: var(--link-color);
+  transition: color 0.3s;
+}
+
+.nav-items a:hover {
+  color: var(--link-hover-dark);
+  transition: color 0.2s ease-in-out;
+}
+
+[data-theme="light"] .nav-items a:hover {
+  color: var(--link-hover-light);
+}
+
+/* ================= THEME BUTTON ================= */
+.theme-btn {
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+}
+
+/* ================= LOGO ================= */
+#logo-img {
+  filter: invert(0);
+  transition: filter 0.3s;
+}
+
+[data-theme="light"] #logo-img {
+  filter: invert(1);
+}
+
+/* ================= HERO SECTION ================= */
+#hero-section-div {
+  background-color: var(--hero-bg-dark);
+  color: var(--hero-text-dark);
+  display: block;
+  width: 99%;
+  border-radius: 30px;
+  text-align: center;
+  margin: auto;
+  padding: 100px 0px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Make all text inside hero inherit color */
+#hero-section-div .p-heading,
+#hero-section-div .p-leading,
+#hero-section-div #github-btn,
+#hero-section-div #github-btn p,
+#hero-section-div #github-btn #btn-text {
+  color: inherit;
+}
+
+[data-theme="light"] #hero-section-div {
+  background-color: var(--hero-bg-light);
+  color: var(--hero-text-light);
+}
+
+/* ================= GITHUB BUTTON ================= */
+#github-btn {
+  background-color: var(--github-bg-dark);
+  color: var(--github-text-dark);
+  padding: 17px 30px;
+  border-radius: 50px;
+  border: 1px solid rgb(41, 41, 41);
+  font-size: 0.9em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#github-btn:hover {
+  background-color: var(--github-hover-bg-dark);
+  color: var(--github-text-hover-dark);
+}
+
+[data-theme="light"] #github-btn {
+  background-color: var(--github-bg-light);
+  color: var(--github-text-light);
+}
+
+[data-theme="light"] #github-btn:hover {
+  background-color: var(--github-hover-bg-light);
+  color: var(--github-text-hover-light);
 }
