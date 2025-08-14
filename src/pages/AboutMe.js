@@ -23,6 +23,14 @@ const AboutMe = () => {
           In addition to coding, I am also skilled in video editing and content creation. 
           I run a YouTube channel with over 10k subscribers, where I share engaging and informative content.
         </p>
+       <a 
+  href="/AyushSharma-Resume-August2025-84.pdf" 
+  download="AyushSharma-Resume-August2025-84.pdf" 
+  className="resume-btn"
+>
+  Download Resume
+</a>
+
         {/* <div className="about-education">
           <h2>Education</h2>
           <ul>

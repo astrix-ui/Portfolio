@@ -13,6 +13,7 @@ function Home() {
   return (
    <>
    <HeroSection />
+   
     <Academic />
     {/* <ProjectsCarousel /> */}
     <ExperienceTimeline />

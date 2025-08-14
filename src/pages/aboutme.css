@@ -8,6 +8,46 @@
   --about-text-light: #121212;
   --about-subtext-light: #555555;
 }
+:root {
+  /* Dark theme (default) */
+  --bg-color: rgb(0, 0, 0);
+  --text-color: rgb(223, 223, 223);
+  --link-color: rgb(223, 223, 223);
+  --link-hover-dark: white;
+--exp-card-bg-dark: #1d1d1d;
+  --exp-card-text-dark: #c5c5c5;
+  --exp-arrow-dark: #1a1a1a;
+  --exp-title-dark: #00d0ff;
+  --exp-subtitle-dark: #c1e1e9;
+  --hero-bg-dark: rgb(5, 5, 5);
+  --hero-text-dark: rgb(223, 223, 223);
+
+  --resume-bg-dark: rgb(19, 19, 19);
+  --resume-hover-bg-dark: rgb(41, 41, 41);
+  --resume-text-dark: rgb(223, 223, 223);
+  --resume-text-hover-dark: rgb(255, 255, 255);
+}
+
+[data-theme="light"] {
+  /* Light theme */
+  --bg-color: #ffffff;
+  --exp-card-bg-light: #f5f5f5;
+  --exp-card-text-light: #121212;
+  --exp-arrow-light: #999999;
+  --exp-title-light: #0066cc;
+  --exp-subtitle-light: #555555;
+  --text-color: #121212;
+  --link-color: #363636;
+  --link-hover-light: #1e90ff; /* lighter hover color */
+
+  --hero-bg-light: #f5f5f5;
+  --hero-text-light: #121212;
+
+  --resume-bg-light: #e0e0e0;
+  --resume-hover-bg-light: #f3f3f3;
+  --resume-text-light: #121212;
+  --resume-text-hover-light: rgb(189, 178, 178);
+}
 
 /* ================= ABOUT CONTAINER ================= */
 .about-container {
@@ -52,6 +92,46 @@
   font-size: 24px;
   margin-bottom: 10px;
 }
+/* =================== RESUME BUTTON ==================== */
+.resume-btn {
+    background-color: var(--resume-bg-dark);
+    color: var(--resume-text-dark);
+    padding: 17px 30px;
+    border-radius: 50px;
+    /* margin: 200px 0; */
+    border: 1px solid rgb(41, 41, 41);
+    font-size: 0.9em;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.resume-btn #btn-text{
+    font-weight: 550;
+}
+
+.resume-btn p{
+    display: inline;
+}
+
+.resume-btn #arrow{
+    margin-left: 10px;
+}
+
+.resume-btn:hover{
+    background-color: var(--resume-hover-bg-dark);
+    color: var(--resume-text-hover-dark);
+}
+
+[data-theme="light"] .resume-btn {
+    background-color: var(--resume-bg-light);
+    color: var(--resume-text-light);
+}
+
+[data-theme="light"] .resume-btn:hover {
+    background-color: var(--resume-hover-bg-light);
+    color: var(--resume-text-hover-light);
+}
+
 
 /* ================= DESCRIPTION ================= */
 .about-description {

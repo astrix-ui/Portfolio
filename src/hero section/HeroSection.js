@@ -35,6 +35,13 @@ const HeroSection = () =>{
             </motion.a>
         
         </motion.div>
+        <a 
+  href="/AyushSharma-Resume-August2025-84.pdf" 
+  download="AyushSharma-Resume-August2025-84.pdf" 
+  className="resume-btn"
+>
+  Download Resume
+</a>
 
         </section>
     )
