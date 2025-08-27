@@ -69,9 +69,11 @@
   border-radius: 20px;
   transition: all 0.3s ease-in-out;
   user-select: none;
-  opacity: 0;
-  transform: scale(0.8);
+  opacity: 1;
+  transform: scale(1);
   color: inherit;  /* inherit theme text color */
+  padding: 20px;
+  gap: 8px;
 }
 
 [data-theme="light"] .box {
@@ -91,17 +93,30 @@
 /* ================= MARKS & TEXT ================= */
 .marks-detail {
   font-size: 2.7em;
-  color: var(--marks-color-dark);
+  color: #00d0ff; /* Blue accent color */
   font-weight: 100;
   transition: color 0.3s;
+  margin: 0;
+  line-height: 1;
 }
 
 [data-theme="light"] .marks-detail {
-  color: var(--marks-color-light);
+  color: #0066cc; /* Blue for light theme */
 }
 
-.box-heading, .box-detail {
+.box-heading {
   color: inherit;
+  font-size: 1.3em;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.box-detail {
+  color: inherit;
+  font-size: 0.9em;
+  margin: 0;
+  line-height: 1;
 }
 
 /* ================= MEDIA QUERIES ================= */
@@ -122,7 +137,7 @@
 @media screen and (max-width:500px) {
   #p-academic { width: 100%; }
   #box-container { width: 80%; }
-  .box { width: 100%; aspect-ratio: 2/1; }
+  .box { width: 45%; aspect-ratio: 1/1; }
   .marks-detail { font-size: 2em; }
   .box-heading { font-size: 1em; }
   .box-detail { font-size: 0.7em; }

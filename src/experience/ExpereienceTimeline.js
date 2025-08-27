@@ -5,6 +5,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import { motion } from 'framer-motion';
 
 function ExperienceTimeline() {
   const experiences = [
@@ -49,30 +50,96 @@ function ExperienceTimeline() {
     },
   ];
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    },
+  };
+
   return (
-    <div className="container">
-      <p className="p-heading2">My Experience</p>
-      <VerticalTimeline>
+    <motion.div 
+      className="experience-container"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <motion.p 
+        className="p-heading2"
+        variants={titleVariants}
+      >
+        My Experience
+      </motion.p>
+      
+      <motion.div 
+        className="experience-timeline"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {experiences.map((exp, index) => (
-          <VerticalTimelineElement
+          <motion.div
             key={index}
-            className="timeline-element"
-            date={exp.date}
-            contentStyle={{ borderRadius: "15px", outline: "none", boxShadow: "none", border: "none" }}
-            contentArrowStyle={{}}
-            iconStyle={{ background: "var(--exp-card-bg-dark)", color: "var(--exp-title-dark)" }}
+            className="timeline-item"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
           >
-            <h3 className="vertical-timeline-element-title">{exp.title}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{exp.company}</h4>
-            <ul>
-              {exp.description.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-          </VerticalTimelineElement>
+            <div className="timeline-marker">
+              <div className="timeline-dot"></div>
+              <div className="timeline-date">{exp.date}</div>
+            </div>
+            
+            <motion.div 
+              className="timeline-content"
+            >
+              <div className="timeline-header">
+                <h3 className="timeline-title">{exp.title}</h3>
+                <h4 className="timeline-company">{exp.company}</h4>
+              </div>
+              
+              <motion.div 
+                className="timeline-description"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
+                viewport={{ once: true }}
+              >
+                {exp.description.map((point, i) => (
+                  <motion.div 
+                    key={i}
+                    className="timeline-point"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.2 + i * 0.1 + 0.4 }}
+                    viewport={{ once: true }}
+                  >
+                    {point}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </motion.div>
         ))}
-      </VerticalTimeline>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 

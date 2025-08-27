@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import './projects.css'; 
 import ProjectCard from '../project card/ProjectCard';
 import Footer from '../footer/Footer';
+import { motion } from 'framer-motion';
 
 function Projects() {
   useEffect(() => {
@@ -14,12 +15,13 @@ function Projects() {
   }, []);
   // Desktop images for carousel
   const desktopCarouselImages = [
-    require('../assets/forumhub.png'),
-    require('../assets/momento.png'),
-    require('../assets/ecommerce.png'),
     require('../assets/Alumni.png'),
+    require('../assets/job-tracker.png'),
+    require('../assets/momento.png'),
     require('../assets/astrixui-movies.png'),
-    require('../assets/novitos-main.jpg')
+    require('../assets/novitos-main.jpg'),
+    require('../assets/forumhub.png'),
+    require('../assets/ecommerce.png')
   ];
 
   // Mobile images for carousel
@@ -40,6 +42,12 @@ function Projects() {
       title: 'SRM Alumni Portal',
       description: 'Connects SRM students and alumni with messaging, filters, and notifications.',
       link: 'https://alumni-srmup.in/admin/index.php'
+    },
+    {
+      imgSrc: require('../assets/job-tracker.png'),
+      title: 'Job Tracker',
+      description: 'A Job Tracking application to keep track of job applications with a full backend system. Comprehensive tools designed to make your job search more organized, efficient, and successful',
+      link: 'https://job-tracker-qqs1.onrender.com'
     },
     
     {
@@ -84,6 +92,7 @@ function Projects() {
       description: 'A website to manage flights data, lost and found data, and much more with a full backend system.',
       link: 'https://github.com/astrix-ui/Airport-Management-System'
     }
+    
   ];
 
   // State to store the current carousel images
@@ -107,9 +116,35 @@ function Projects() {
     };
   }, []);
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const slideVariants = {
+    hidden: { opacity: 0, scale: 1.1 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.8, ease: "easeOut" }
+    },
+  };
+
   return (
     <>
-      <div className="carousel-container">
+      <motion.div 
+        className="carousel-container"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={0}
@@ -121,15 +156,37 @@ function Projects() {
         >
           {carouselImages.map((imgSrc, index) => (
             <SwiperSlide key={index}>
-              <img src={imgSrc} alt={`Carousel Image ${index + 1}`} />
+              <motion.img 
+                src={imgSrc} 
+                alt={`Carousel Image ${index + 1}`}
+                variants={slideVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              />
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
 
-      <h2 className="p-heading2 custom-head"  >Projects</h2>
+      <motion.h2 
+        className="p-heading2 custom-head"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Projects
+      </motion.h2>
 
-      <div className='proj-container'>
+      <motion.div 
+        className='proj-container'
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.1 }}
+      >
         {projectData.map((project, index) => (
           <ProjectCard 
             key={index}
@@ -139,7 +196,7 @@ function Projects() {
             link = {project.link}
           />
         ))}
-      </div>
+      </motion.div>
       <Footer />
     </>
   );

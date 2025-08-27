@@ -1,6 +1,12 @@
 
 
 
+/* Add margin for fixed navbar */
+body {
+  margin: 0;
+  padding-top: 80px;
+}
+
 /* OLD  */
 .App {
   text-align: center;

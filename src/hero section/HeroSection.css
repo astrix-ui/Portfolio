@@ -8,7 +8,7 @@
     width: 99%;
     border-radius: 30px;
     text-align: center;
-    margin: auto;
+    margin: 20px auto;
     padding: 100px 0px;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -20,6 +20,15 @@
 #hero-section-div #github-btn p,
 #hero-section-div #github-btn #btn-text {
     color: inherit;
+}
+
+/* Ensure text is black in light theme */
+[data-theme="light"] #hero-section-div .p-heading {
+    color: #000000 !important;
+}
+
+[data-theme="light"] #hero-section-div .p-leading {
+    color: #333333 !important;
 }
 
 /* Light theme overrides */

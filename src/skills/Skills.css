@@ -24,6 +24,8 @@ body {
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
   font-family: "DM Sans", serif;
+  margin: 0;
+  padding: 0;
 }
 
 #p-skills {
@@ -52,6 +54,21 @@ body {
 .p-heading2 {
   font-size: 3em;
   font-weight: 400;
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.p-heading2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+  transition: background 0.3s;
 }
 
 #box-container {
@@ -74,10 +91,13 @@ body {
   border: 1px solid var(--box-border-dark);
   border-radius: 20px;
   user-select: none;
-  opacity: 0;
-  transform: scale(0.8);
+  opacity: 1;
+  transform: scale(1);
   transition: all 0.6s ease-out, color 0.3s;
   color: var(--box-text-dark);
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
 }
 
 .box.show {
@@ -144,7 +164,7 @@ body {
 @media screen and (max-width: 500px) {
   #p-skills, #p-academic { width: 80%; }
   #box-container { width: 80%; }
-  .box { width: 100%; aspect-ratio: 2 / 1; }
+  .box { width: 45%; aspect-ratio: 1 / 1; }
   .marks-detail { font-size: 2em; }
   .box-heading { font-size: 1em; }
   .box-detail { font-size: 0.7em; }
@@ -152,6 +172,32 @@ body {
 
 /* ================= SKILL IMAGES ================= */
 .skill-img {
-  width: 100px;
+  width: 60px;
+  height: 60px;
   border-radius: 10px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  transition: all 0.3s ease;
+}
+
+.skill-name {
+  font-size: 0.8em;
+  margin-top: 8px;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* Add a subtle glow effect on hover */
+.box:hover .skill-img {
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.2)) brightness(1.1);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .skill-img {
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.05));
+}
+
+[data-theme="light"] .box:hover .skill-img {
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1)) brightness(1.05);
 }

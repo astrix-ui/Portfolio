@@ -1,15 +1,51 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Academic from './academics/Academic';
 import './App.css';
-import HeroSection from './hero section/HeroSection';
 import Navbar from './Navbar/Navbar';
 import { useState, useEffect } from "react";
-import Skills from './skills/Skills';
 import Home from './pages/home';
 import Projects from './pages/projects';
 import AboutMe from './pages/AboutMe';
 import ContactMe from './pages/Contactme';
 import ThankYou from './thankyou';
+import { motion, AnimatePresence } from 'framer-motion';
+import FloatingElements from './components/FloatingElements';
+
+// Page transition variants
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  in: {
+    opacity: 1,
+    y: 0,
+  },
+  out: {
+    opacity: 0,
+    y: -20,
+  },
+};
+
+const pageTransition = {
+  type: "tween",
+  ease: "anticipate",
+  duration: 0.5,
+};
+
+// Animated Route wrapper component
+const AnimatedRoute = ({ children }) => {
+  return (
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 function App() {
   // Load theme from localStorage or default to dark
@@ -29,14 +65,17 @@ function App() {
 
   return (
     <Router>
+      <FloatingElements />
       <Navbar toggleTheme={toggleTheme} theme={theme} />
-      <Routes>
-        <Route path="/" element={ <Home /> } />
-        <Route path="/Projects" element={ <Projects /> } />
-        <Route path="/AboutMe" element={ <AboutMe /> } />
-        <Route path="/ContactMe" element={ <ContactMe /> } />
-        <Route path="/thankyou" element= {<ThankYou />} />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route path="/" element={<AnimatedRoute><Home /></AnimatedRoute>} />
+          <Route path="/Projects" element={<AnimatedRoute><Projects /></AnimatedRoute>} />
+          <Route path="/AboutMe" element={<AnimatedRoute><AboutMe /></AnimatedRoute>} />
+          <Route path="/ContactMe" element={<AnimatedRoute><ContactMe /></AnimatedRoute>} />
+          <Route path="/thankyou" element={<AnimatedRoute><ThankYou /></AnimatedRoute>} />
+        </Routes>
+      </AnimatePresence>
     </Router>
   );
 }
