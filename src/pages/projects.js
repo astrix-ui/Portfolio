@@ -41,56 +41,65 @@ function Projects() {
       imgSrc: require('../assets/Alumni.png'),
       title: 'SRM Alumni Portal',
       description: 'Connects SRM students and alumni with messaging, filters, and notifications.',
-      link: 'https://alumni-srmup.in/admin/index.php'
+      link: 'https://alumni-srmup.in/admin/index.php',
+      projectId: 'alumni-portal'
     },
     {
       imgSrc: require('../assets/job-tracker.png'),
       title: 'Job Tracker',
       description: 'A Job Tracking application to keep track of job applications with a full backend system. Comprehensive tools designed to make your job search more organized, efficient, and successful',
-      link: 'https://job-tracker-qqs1.onrender.com'
+      link: 'https://job-tracker-qqs1.onrender.com',
+      projectId: 'job-tracker'
     },
     
     {
       imgSrc: require('../assets/forumhub.png'),
       title: 'Forum Hub',
       description: 'A Forum discussion platform with easy engaging tools.',
-      link: 'https://github.com/astrix-ui/ForumHub.com.github.io'
+      link: 'https://github.com/astrix-ui/ForumHub.com.github.io',
+      projectId: 'forum-hub'
     },
     {
       imgSrc: require('../assets/momento.png'),
       title: 'Momento',
       description: 'A social media app for sharing memorable moments with realtime Direct Messaging.',
-      link: 'https://github.com/astrix-ui/Mavericks-Site'
+      link: 'https://github.com/astrix-ui/Mavericks-Site',
+      projectId: 'momento'
     },
     {
       imgSrc: require('../assets/ecommerce.png'),
-      title: 'E-commerce Site',
+      title: 'E-commerce Platform',
       description: 'An online shopping platform frontend template.',
-      link: 'https://github.com/astrix-ui/Ecommerce-Website.github.io'
+      link: 'https://github.com/astrix-ui/Ecommerce-Website.github.io',
+      projectId: 'ecommerce'
     },
     {
       imgSrc: require('../assets/astrixui-movies.png'),
       title: 'AstrixUI Movies',
       description: 'A movie listing app with advanced search filters using APIs.',
-      link: 'https://github.com/astrix-ui/astrixui-movies'
+      link: 'https://github.com/astrix-ui/astrixui-movies',
+      projectId: 'astrixui-movies'
     },
     {
       imgSrc: require('../assets/novitos-main.jpg'),
-      title: 'Novitos',
+      title: 'Novitos Notes',
       description: 'A note-taking app with multiple handy features.',
-      link: 'https://github.com/astrix-ui/Novitos-NotesWebsite.github.io'
+      link: 'https://github.com/astrix-ui/Novitos-NotesWebsite.github.io',
+      projectId: 'novitos'
     },
     {
       imgSrc: require('../assets/passop.png'),
       title: 'Password Manager',
       description: 'A Password Manager application with fully functioning backend and MongoDB Database.',
-      link: 'https://github.com/astrix-ui/Password-Manager'
+      link: 'https://github.com/astrix-ui/Password-Manager',
+      projectId: 'password-manager'
     },
     {
       imgSrc: require('../assets/aai.png'),
       title: 'Airport Management System',
       description: 'A website to manage flights data, lost and found data, and much more with a full backend system.',
-      link: 'https://github.com/astrix-ui/Airport-Management-System'
+      link: 'https://github.com/astrix-ui/Airport-Management-System',
+      projectId: 'airport-management'
     }
     
   ];
@@ -193,7 +202,8 @@ function Projects() {
             imgSrc={project.imgSrc}  
             title={project.title}
             description={project.description}
-            link = {project.link}
+            link={project.link}
+            projectId={project.projectId}
           />
         ))}
       </motion.div>

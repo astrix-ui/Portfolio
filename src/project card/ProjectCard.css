@@ -35,7 +35,7 @@
 
 /* ================= PROJECT CARD STYLES ================= */
 .proj-card {
-  width: 30%;
+  width: calc(33.333% - 30px);
   padding: 17px 20px 30px 20px;
   background-color: var(--proj-card-bg-dark);
   border-radius: 20px;
@@ -43,6 +43,10 @@
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   color: var(--proj-card-text-dark);
   margin: 15px;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  flex: 0 0 auto;
 }
 
 .proj-card h3,
@@ -61,6 +65,14 @@
   border-radius: 12px;
 }
 
+.proj-detail-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
 .view-proj-btn {
   background-color: var(--proj-btn-bg-dark);
   color: var(--proj-btn-text-dark);
@@ -70,6 +82,7 @@
   font-size: 0.9em;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin-top: auto;
 }
 
 .view-proj-btn:hover {
@@ -101,23 +114,32 @@
 }
 
 /* ================= RESPONSIVE STYLES ================= */
-@media screen and (max-width: 1000px) {
-  .proj-card { width: 45%; }
-}
-
-@media screen and (max-width: 800px) {
-  .proj-card { width: 95%; }
-  .proj-card h3 { font-size: 1.5em; }
-  .proj-card p { font-size: 1.3em; width: 90%; }
-}
-
-@media screen and (max-width: 500px) {
+/* Tablets: 2 cards per row */
+@media screen and (max-width: 1024px) {
   .proj-card {
-    width: 100%;
-    padding: 5px 5px 30px 5px;
-    border-radius: 10px;
+    width: calc(50% - 30px);
+    min-height: 400px;
+  }
+}
+
+/* Mobile: 1 card per row */
+@media screen and (max-width: 768px) {
+  .proj-card {
+    width: calc(100% - 30px);
+    min-height: 350px;
+  }
+  .proj-card h3 { font-size: 1.4em; }
+  .proj-card p { font-size: 1.1em; }
+}
+
+/* Small mobile: optimized spacing */
+@media screen and (max-width: 480px) {
+  .proj-card {
+    width: calc(100% - 20px);
+    padding: 12px 15px 25px 15px;
+    margin: 10px;
+    min-height: 300px;
   }
   .proj-card h3 { font-size: 1.2em; }
-  .proj-container { padding: 0; gap: 0; }
-  .proj-card p { font-size: 1em; width: 95%; }
+  .proj-card p { font-size: 1em; }
 }

@@ -1,8 +1,24 @@
 import React from 'react';
 import './ProjectCard.css';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
-const ProjectCard = ({ imgSrc, title, description, link }) => {
+const ProjectCard = ({ imgSrc, title, description, link, projectId }) => {
+  const navigate = useNavigate();
+
+  // Create project ID from title if not provided
+  const getProjectId = () => {
+    if (projectId) return projectId;
+    return title.toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+  };
+
+  const handleViewProject = (e) => {
+    e.preventDefault();
+    navigate(`/project/${getProjectId()}`);
+  };
+
   const cardVariants = {
     hidden: { 
       opacity: 0, 
@@ -86,9 +102,8 @@ const ProjectCard = ({ imgSrc, title, description, link }) => {
         </motion.p>
       </motion.div>
       
-      <motion.a 
-        href={link} 
-        target='_blank' 
+      <motion.button 
+        onClick={handleViewProject}
         className='view-proj-btn'
         variants={buttonVariants}
         whileHover="hover"
@@ -98,8 +113,8 @@ const ProjectCard = ({ imgSrc, title, description, link }) => {
         transition={{ duration: 0.5, delay: 0.5 }}
         viewport={{ once: true }}
       >
-        View Project
-      </motion.a>
+        View Details
+      </motion.button>
     </motion.div>
   );
 };

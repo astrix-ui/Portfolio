@@ -7,6 +7,7 @@ import Projects from './pages/projects';
 import AboutMe from './pages/AboutMe';
 import ContactMe from './pages/Contactme';
 import ThankYou from './thankyou';
+import ProjectDetail from './pages/ProjectDetail';
 import { motion, AnimatePresence } from 'framer-motion';
 import FloatingElements from './components/FloatingElements';
 
@@ -71,6 +72,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AnimatedRoute><Home /></AnimatedRoute>} />
           <Route path="/Projects" element={<AnimatedRoute><Projects /></AnimatedRoute>} />
+          <Route path="/project/:projectId" element={<AnimatedRoute><ProjectDetail /></AnimatedRoute>} />
           <Route path="/AboutMe" element={<AnimatedRoute><AboutMe /></AnimatedRoute>} />
           <Route path="/ContactMe" element={<AnimatedRoute><ContactMe /></AnimatedRoute>} />
           <Route path="/thankyou" element={<AnimatedRoute><ThankYou /></AnimatedRoute>} />
