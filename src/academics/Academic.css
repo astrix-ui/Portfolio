@@ -125,6 +125,7 @@
   .box-heading { font-size: 1.1em; }
   .box-detail { font-size: 0.9em; }
   .box { width: 30%; } 
+  #box-container { width: 70%; }
 }
 
 @media screen and (max-width:850px) {
@@ -132,13 +133,34 @@
   .marks-detail { font-size: 2em; }
   .box-heading { font-size: 1em; }
   .box-detail { font-size: 0.7em; }
+  #box-container { width: 85%; }
 }
 
-@media screen and (max-width:500px) {
-  #p-academic { width: 100%; }
-  #box-container { width: 80%; }
-  .box { width: 45%; aspect-ratio: 1/1; }
-  .marks-detail { font-size: 2em; }
-  .box-heading { font-size: 1em; }
-  .box-detail { font-size: 0.7em; }
+@media screen and (max-width:600px) {
+  #p-academic { width: 90%; }
+  #box-container { width: 95%; }
+  .box { 
+    width: 45%; 
+    aspect-ratio: 1/1; 
+    padding: 15px;
+    min-height: 140px;
+  }
+  .marks-detail { font-size: 1.8em; }
+  .box-heading { font-size: 0.9em; }
+  .box-detail { font-size: 0.65em; }
+  .p-heading2 { font-size: 2.5em; }
+}
+
+@media screen and (max-width:400px) {
+  #p-academic { width: 95%; }
+  #box-container { width: 100%; gap: 15px; }
+  .box { 
+    width: 42%; 
+    padding: 12px;
+    min-height: 120px;
+  }
+  .marks-detail { font-size: 1.6em; }
+  .box-heading { font-size: 0.8em; line-height: 1.1; }
+  .box-detail { font-size: 0.6em; }
+  .p-heading2 { font-size: 2.2em; }
 }

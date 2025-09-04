@@ -174,9 +174,126 @@
   color: var(--about-subtext-light);
 }
 
+/* ================= PORTFOLIO TECH STACK SECTION ================= */
+.portfolio-tech-section {
+  margin: 100px 0 80px 0;
+  padding: 60px 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+}
+
+.portfolio-tech-title {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--about-subtext-dark);
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  opacity: 0.7;
+}
+
+.portfolio-tech-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.portfolio-tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.portfolio-tech-item:hover {
+  transform: translateY(-4px);
+}
+
+.portfolio-tech-icon {
+  width: 32px;
+  height: 32px;
+  opacity: 0.6;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.portfolio-tech-item:hover .portfolio-tech-icon {
+  opacity: 0.9;
+  filter: grayscale(0%) brightness(1);
+}
+
+.portfolio-tech-name {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--about-subtext-dark);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-tech-item:hover .portfolio-tech-name {
+  opacity: 0.8;
+}
+
+/* ================= LIGHT THEME OVERRIDES FOR PORTFOLIO TECH ================= */
+[data-theme="light"] .portfolio-tech-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .portfolio-tech-title {
+  color: var(--about-subtext-light);
+}
+
+[data-theme="light"] .portfolio-tech-name {
+  color: var(--about-subtext-light);
+}
+
+[data-theme="light"] .portfolio-tech-icon {
+  filter: grayscale(100%) brightness(0.3);
+}
+
+[data-theme="light"] .portfolio-tech-item:hover .portfolio-tech-icon {
+  filter: grayscale(0%) brightness(1);
+}
+
 /* ================= RESPONSIVE ================= */
 @media screen and (max-width: 569px) {
   .about-photo {
     width: 170px;
+  }
+  
+  .portfolio-tech-section {
+    margin: 80px 0 60px 0;
+    padding: 40px 20px;
+  }
+  
+  .portfolio-tech-title {
+    font-size: 0.85rem;
+    margin-bottom: 40px;
+  }
+  
+  .portfolio-tech-grid {
+    gap: 30px;
+  }
+  
+  .portfolio-tech-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .portfolio-tech-name {
+    font-size: 0.65rem;
+    letter-spacing: 0.6px;
   }
 }

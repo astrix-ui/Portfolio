@@ -151,6 +151,117 @@ const AboutMe = () => {
           
           <Skills />
           <ExperienceTimeline />
+          
+          {/* Portfolio Tech Stack Section */}
+          <motion.div 
+            className="portfolio-tech-section"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 0.8, 
+              delay: 0.2,
+              ease: "easeOut"
+            }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.h3 
+              className="portfolio-tech-title"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.6,
+                delay: 0.4,
+                ease: "easeOut"
+              }}
+              viewport={{ once: true }}
+            >
+              This portfolio was built with
+            </motion.h3>
+            <motion.div 
+              className="portfolio-tech-grid"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.15,
+                    delayChildren: 0.6,
+                  },
+                },
+              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
+              {[
+                { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+                { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+                { name: 'Framer Motion', icon: 'https://cdn.worldvectorlogo.com/logos/framer-motion.svg' },
+                { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+                { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' }
+              ].map((tech, index) => (
+                <motion.div 
+                  key={tech.name}
+                  className="portfolio-tech-item"
+                  variants={{
+                    hidden: { 
+                      opacity: 0, 
+                      y: 30,
+                      scale: 0.8,
+                      filter: "blur(4px)"
+                    },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0,
+                      scale: 1,
+                      filter: "blur(0px)",
+                      transition: {
+                        duration: 0.6,
+                        ease: "easeOut",
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 15
+                      }
+                    }
+                  }}
+                  whileHover={{ 
+                    y: -8,
+                    scale: 1.05,
+                    transition: { 
+                      duration: 0.3,
+                      ease: "easeOut"
+                    }
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <motion.img 
+                    src={tech.icon} 
+                    alt={tech.name}
+                    className="portfolio-tech-icon"
+                    whileHover={{
+                      rotate: [0, -5, 5, 0],
+                      transition: { 
+                        duration: 0.5,
+                        ease: "easeInOut"
+                      }
+                    }}
+                  />
+                  <motion.span 
+                    className="portfolio-tech-name"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.5 }}
+                    whileHover={{ 
+                      opacity: 0.8,
+                      scale: 1.05,
+                      transition: { duration: 0.2 }
+                    }}
+                  >
+                    {tech.name}
+                  </motion.span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
         </motion.div>
       </motion.div>
     </motion.div>

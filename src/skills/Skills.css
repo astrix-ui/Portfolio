@@ -152,6 +152,7 @@ body {
   .box-heading { font-size: 1.1em; }
   .box-detail { font-size: 0.9em; }
   .box { width: 30%; }
+  #box-container { width: 70%; }
 }
 
 @media screen and (max-width: 850px) {
@@ -159,15 +160,35 @@ body {
   .marks-detail { font-size: 2em; }
   .box-heading { font-size: 1em; }
   .box-detail { font-size: 0.7em; }
+  #box-container { width: 85%; }
+  .skill-img { width: 50px; height: 50px; }
 }
 
-@media screen and (max-width: 500px) {
-  #p-skills, #p-academic { width: 80%; }
-  #box-container { width: 80%; }
-  .box { width: 45%; aspect-ratio: 1 / 1; }
-  .marks-detail { font-size: 2em; }
-  .box-heading { font-size: 1em; }
-  .box-detail { font-size: 0.7em; }
+@media screen and (max-width: 600px) {
+  #p-skills { width: 90%; }
+  #box-container { width: 95%; }
+  .box { 
+    width: 45%; 
+    aspect-ratio: 1 / 1; 
+    padding: 10px;
+    min-height: 120px;
+  }
+  .skill-img { width: 40px; height: 40px; }
+  .skill-name { font-size: 0.7em; }
+  .p-heading2 { font-size: 2.5em; }
+}
+
+@media screen and (max-width: 400px) {
+  #p-skills { width: 95%; }
+  #box-container { width: 100%; gap: 15px; }
+  .box { 
+    width: 42%; 
+    padding: 8px;
+    min-height: 100px;
+  }
+  .skill-img { width: 35px; height: 35px; }
+  .skill-name { font-size: 0.65em; }
+  .p-heading2 { font-size: 2.2em; }
 }
 
 /* ================= SKILL IMAGES ================= */
@@ -200,4 +221,50 @@ body {
 
 [data-theme="light"] .box:hover .skill-img {
   filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1)) brightness(1.05);
+}
+
+/* ================= VIEW MORE BUTTON ================= */
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.view-more-btn {
+  background-color: var(--resume-bg-dark);
+  color: var(--resume-text-dark);
+  padding: 17px 30px;
+  border-radius: 50px;
+  border: 1px solid rgb(41, 41, 41);
+  font-size: 0.9em;
+  font-weight: 550;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.view-more-btn:hover {
+  background-color: var(--resume-hover-bg-dark);
+  color: var(--resume-text-hover-dark);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.view-more-btn:focus {
+  outline: none;
+}
+
+/* Light theme overrides for view more button */
+[data-theme="light"] .view-more-btn {
+  background-color: var(--resume-bg-light);
+  color: var(--resume-text-light);
+}
+
+[data-theme="light"] .view-more-btn:hover {
+  background-color: var(--resume-hover-bg-light);
+  color: var(--resume-text-hover-light);
 }

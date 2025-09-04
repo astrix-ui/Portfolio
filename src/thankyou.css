@@ -1,0 +1,122 @@
+/* ================= THEME VARIABLES ================= */
+:root {
+  --thankyou-bg-dark: rgb(10, 10, 10);
+  --thankyou-text-dark: rgb(223, 223, 223);
+  --thankyou-subtext-dark: rgb(185, 185, 185);
+
+  --thankyou-bg-light: #f5f5f5;
+  --thankyou-text-light: #121212;
+  --thankyou-subtext-light: #555555;
+}
+
+/* ================= PAGE WRAPPER ================= */
+.thankyou-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.thankyou-page .thankyou-container {
+  flex: 1;
+}
+
+/* ================= THANK YOU CONTAINER ================= */
+.thankyou-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--thankyou-text-dark);
+  transition: color 0.3s;
+}
+
+/* ================= HEADING ================= */
+.thankyou-container h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--thankyou-text-dark);
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+/* ================= PARAGRAPH ================= */
+.thankyou-container p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--thankyou-subtext-dark);
+  max-width: 600px;
+  line-height: 1.6;
+  margin: 0 auto;
+  transition: color 0.3s;
+}
+
+/* ================= LIGHT THEME OVERRIDES ================= */
+[data-theme="light"] .thankyou-container {
+  color: var(--thankyou-text-light);
+}
+
+[data-theme="light"] .thankyou-container h2 {
+  color: var(--thankyou-text-light);
+}
+
+[data-theme="light"] .thankyou-container p {
+  color: var(--thankyou-subtext-light);
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+@media screen and (max-width: 768px) {
+  .thankyou-container {
+    margin-top: 80px;
+    padding: 30px 15px;
+  }
+  
+  .thankyou-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .thankyou-container p {
+    font-size: 1.1rem;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .thankyou-container {
+    margin-top: 70px;
+    padding: 25px 10px;
+  }
+  
+  .thankyou-container h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  
+  .thankyou-container p {
+    font-size: 1rem;
+    max-width: 95%;
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .thankyou-container {
+    margin-top: 60px;
+    padding: 20px 8px;
+  }
+  
+  .thankyou-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .thankyou-container p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}

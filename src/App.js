@@ -10,6 +10,7 @@ import ThankYou from './thankyou';
 import ProjectDetail from './pages/ProjectDetail';
 import { motion, AnimatePresence } from 'framer-motion';
 import FloatingElements from './components/FloatingElements';
+import ScrollToTop from './components/ScrollToTop';
 
 // Page transition variants
 const pageVariants = {
@@ -66,6 +67,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <FloatingElements />
       <Navbar toggleTheme={toggleTheme} theme={theme} />
       <AnimatePresence mode="wait">
