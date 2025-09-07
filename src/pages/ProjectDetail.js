@@ -343,7 +343,55 @@ const ProjectDetail = () => {
       'Auto-fill Integration',
       'Security Dashboard'
     ]
-  }
+  },
+  'typescript-note-app': {
+  id: 'typescript-note-app',
+  title: 'TypeScript Note App',
+  banner: require('../project-ss/typescript-notes/1.png'),
+  description: 'A modern, responsive note-taking application built with React, TypeScript, and Bootstrap. It allows users to create, edit, organize, and search notes with a tagging system, all stored locally in the browser.',
+  fullDescription: [
+    'TypeScript Note App is a lightweight yet powerful note-taking tool designed for productivity and organization.',
+    'Users can create and edit notes with markdown support, making it easy to format content while writing.',
+    'The built-in tagging system allows flexible organization—tags can be created, edited, or deleted at any time.',
+    'With search and multi-tag filtering, finding specific notes becomes effortless.',
+    'All notes and tags are stored in the browser’s local storage, ensuring offline access without the need for a backend.',
+    'The app provides a clean, intuitive, and responsive interface, optimized for both desktop and mobile devices.'
+  ],
+  techStack: [
+    'React 19.1.1',
+    'TypeScript 5.8.3',
+    'React Router DOM 6.16.0',
+    'Bootstrap 5.3.8',
+    'React Bootstrap 2.10.10',
+    'React Select 5.10.2',
+    'UUID 12.0.0',
+    'React Markdown 10.1.0',
+    'Vite 7.1.2',
+    'ESLint',
+    'CSS Modules'
+  ],
+  screenshots: [
+    require('../project-ss/typescript-notes/1.png'),
+    require('../project-ss/typescript-notes/2.png'),
+    require('../project-ss/typescript-notes/3.png'),
+    require('../project-ss/typescript-notes/4.png'),
+    require('../project-ss/typescript-notes/5.png'),
+
+  ],
+  githubLink: 'https://github.com/astrix-ui/notes-app-typescript/',
+  liveLink: null,
+  features: [
+    'Create & Edit Notes with Markdown Support',
+    'Tag Management (Create, Edit, Delete)',
+    'Search & Multi-Tag Filtering',
+    'Local Storage Persistence',
+    'Responsive Design for Desktop & Mobile',
+    'Bulk Tag Editing',
+    'User-Friendly Navigation',
+    'Future-Ready with Markdown Rendering Integration'
+  ]
+}
+
 };
 
 
