@@ -79,7 +79,8 @@ const Skills = () => {
         { src: require('../assets/java.png'), name: 'Java' },
         { src: require('../assets/python.png'), name: 'Python' },
         { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', name: 'TypeScript' },
-        { src: 'https://www.framer.com/images/favicons/128x128.png', name: 'Framer Motion' },
+        { src: require('../assets/nextjs.png'), name: 'Next.js' },
+        { src: require('../assets/framermotion.png'), name: 'Framer Motion' },
         { src: 'https://ui.shadcn.com/favicon.ico', name: 'ShadCN' },
     ];
 
