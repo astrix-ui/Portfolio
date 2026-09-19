@@ -11,7 +11,7 @@ function ExperienceTimeline() {
   const experiences = [
     {
       title: "Full Stack Developer",
-      company: "National e Governance Division",
+      company: "National e-Governance Division",
       date: "January 2026 – July 2026",
       description: [
         "Developed full-stack features for multiple live Government of India platforms using the MERN stack, contributing to both frontend and backend development.",
