@@ -73,7 +73,7 @@ const Footer = () => {
             <FaGithub />
           </motion.a>
           
-          <motion.a 
+          {/* <motion.a 
             href="https://x.com/ui_trix" 
             className="icon" 
             target='_blank'
@@ -82,10 +82,10 @@ const Footer = () => {
             whileTap={{ scale: 0.9 }}
           >
             <FaTwitter />
-          </motion.a>
+          </motion.a> */}
           
           <motion.a 
-            href="https://www.instagram.com/clumsymind7878/" 
+            href="https://www.instagram.com/ayushhwhoo/" 
             className="icon" 
             target='_blank'
             variants={iconVariants}

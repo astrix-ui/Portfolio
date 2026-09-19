@@ -87,27 +87,27 @@ function Projects() {
       link: 'https://github.com/astrix-ui/Novitos-NotesWebsite.github.io',
       projectId: 'novitos'
     },
-    {
-      imgSrc: require('../assets/passop.png'),
-      title: 'Password Manager',
-      description: 'A Password Manager application with fully functioning backend and MongoDB Database.',
-      link: 'https://github.com/astrix-ui/Password-Manager',
-      projectId: 'password-manager'
-    },
+    // {
+    //   imgSrc: require('../assets/passop.png'),
+    //   title: 'Password Manager',
+    //   description: 'A Password Manager application with fully functioning backend and MongoDB Database.',
+    //   link: 'https://github.com/astrix-ui/Password-Manager',
+    //   projectId: 'password-manager'
+    // },
     {
       imgSrc: require('../assets/aai.png'),
       title: 'Airport Management System',
       description: 'A website to manage flights data, lost and found data, and much more with a full backend system.',
       link: 'https://github.com/astrix-ui/Airport-Management-System',
       projectId: 'airport-management'
-    },
-    {
-  imgSrc: require('../project-ss/typescript-notes/1.png'),
-  title: 'TypeScript Note App',
-  description: 'A modern, responsive note-taking app built with React and TypeScript. It features markdown editing, tagging, search & filtering, and local storage persistence for offline use.',
-  link: 'https://github.com/astrix-ui/notes-app-typescript/',
-  projectId: 'typescript-note-app'
-}
+    }
+//     {
+//   imgSrc: require('../project-ss/typescript-notes/1.png'),
+//   title: 'TypeScript Note App',
+//   description: 'A modern, responsive note-taking app built with React and TypeScript. It features markdown editing, tagging, search & filtering, and local storage persistence for offline use.',
+//   link: 'https://github.com/astrix-ui/notes-app-typescript/',
+//   projectId: 'typescript-note-app'
+// }
 
     
   ];

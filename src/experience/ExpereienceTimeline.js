@@ -10,7 +10,19 @@ import { motion } from 'framer-motion';
 function ExperienceTimeline() {
   const experiences = [
     {
-      title: "Generative AI Intern",
+      title: "Full Stack Developer",
+      company: "National e Governance Division",
+      date: "January 2026 – July 2026",
+      description: [
+        "Developed full-stack features for multiple live Government of India platforms using the MERN stack, contributing to both frontend and backend development.",
+        "Worked on TSRS (Textile Statistical Research System) and PM-AJAY (Pradhan Mantri Anusuchit Jaati Abhyuday Yojana), implementing user interfaces, APIs, data workflows, and database functionality.",
+        "Contributed to e-Anudaan and the Transgender Portal, developing and integrating role-based dashboards, REST APIs, authentication, and data management features.",
+        "Collaborated with development teams to debug, optimize, test, and deploy production-ready features across these real-world government applications currently serving Government of India use cases."
+    ],
+      icon: "🤖",
+    },
+    {
+      title: "Frontend Developer Intern",
       company: "National Informatics Centre Services Inc.",
       date: "June 2025 – July 2025",
       description: [
@@ -23,7 +35,7 @@ function ExperienceTimeline() {
       icon: "🤖",
     },
     {
-      title: "Full Stack Intern",
+      title: "Full Stack Developer Intern",
       company: "Airports Authority of India (AAI)",
       date: "December 2024 – January 2025",
       description: [
@@ -36,7 +48,7 @@ function ExperienceTimeline() {
       icon: "✈️",
     },
     {
-      title: "Frontend Intern",
+      title: "Frontend Developer Intern",
       company: "E-Tech",
       date: "June 2024 – July 2024",
       description: [

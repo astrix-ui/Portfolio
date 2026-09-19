@@ -80,8 +80,8 @@ const Skills = () => {
         { src: require('../assets/python.png'), name: 'Python' },
         { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', name: 'TypeScript' },
         { src: require('../assets/nextjs.png'), name: 'Next.js' },
-        { src: require('../assets/framermotion.png'), name: 'Framer Motion' },
-        { src: 'https://ui.shadcn.com/favicon.ico', name: 'ShadCN' },
+        { src: require('../assets/spingboot.png'), name: 'SpringBoot' },
+        { src: require('../assets/angular.png') , name: 'Angular' },
     ];
 
     return (

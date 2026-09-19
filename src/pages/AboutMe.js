@@ -63,7 +63,7 @@ const AboutMe = () => {
         variants={cardVariants}
       >
         <motion.img 
-          src={require('../assets/pfp.JPG')} 
+          src={require('../assets/pfp3.jpg')} 
           alt="Ayush Sharma" 
           className="about-photo"
           variants={imageVariants}
@@ -119,7 +119,7 @@ const AboutMe = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           In addition to coding, I am also skilled in video editing and content creation. 
-          I run a YouTube channel with over 10k subscribers, where I share engaging and informative content.
+          I run a YouTube channel with about 20,000 subscribers, where I share engaging and inspiring content.
         </motion.p>
         
         <motion.div

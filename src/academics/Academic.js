@@ -44,7 +44,7 @@ const Academic = () => {
     const academicData = [
         { marks: '95.6%', grade: 'X Grade', detail: 'CBSE' },
         { marks: '90%', grade: 'XII Grade', detail: 'CBSE' },
-        { marks: '8.63', grade: 'University CGPA', detail: 'SRMIST Delhi-NCR' },
+        { marks: '8.73', grade: 'University CGPA', detail: 'SRMIST Delhi-NCR' },
     ];
 
     return(
